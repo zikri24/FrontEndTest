@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/Script.js"></script>
+    <link href="myCSS.css" rel="stylesheet" />
+</head>
+<body ng-controller="myController">    
+    <div id="container">
+        <hr /> 
+        <ul ng-repeat="client in clients">
+            <li ng-repeat="item in client"> 
+                <div class="img_container">
+                    <img src="{{item.logo.path_to_file}}" alt="Image not Available" />                    
+                </div>
+                <div class="merchant_details">
+                    <strong>{{item.display_name}}</strong><br />
+                    <strong>E: </strong>{{item.email}} <br />
+                    <strong>P: </strong>{{item.phone}}<br />
+                    <strong>Status: </strong>{{item.status}}<br />                    
+                    {{item.address.address1}} {{item.address.address2}}, {{item.address.suburb}} <br />
+                    {{item.address.state}}, {{item.address.postcode}}, <br />
+                    <hr /> 
+                </div>                                           
+            </li>   
+        </ul>
+    </div>
+</body>
+</html>
